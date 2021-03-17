@@ -6,6 +6,16 @@
 
 #include "Int.h"
 
+bool compare_Int(const Int& lhs, const Int& rhs)
+{
+   return lhs < rhs;
+}
+
+void swap(Int& a, Int& b)
+{
+   std::swap(a, b);
+}
+
 int main()
 {
    std::vector<Int> v;
@@ -14,8 +24,9 @@ int main()
    std::mt19937 gen(rd());
    std::uniform_int_distribution<int> dist;
 
-   for (int i = 0; i < 1'000'000; i++)
-      v.push_back( dist(gen) );
+   for (int i = 0; i < 10'000'000; i++)
+   // v.push_back( dist(gen) );
+      v.push_back( 10'000'000 - i );
 
    auto start = std::chrono::high_resolution_clock::now();
 
