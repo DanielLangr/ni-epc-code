@@ -1,4 +1,6 @@
-#ifndef X_H
-#define X_H
+class X
+{
+   static void f();
+};
 
-#endif
+void X::f() { }
